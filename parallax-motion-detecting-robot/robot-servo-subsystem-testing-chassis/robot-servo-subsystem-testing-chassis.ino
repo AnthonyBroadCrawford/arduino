@@ -22,7 +22,6 @@ void setup() {
   rightMotor.attach(SERVO_BOARD_RIGHT_MOTOR_PIN);
   leftMotor.attach(SERVO_BOARD_LEFT_MOTOR_PIN);
 
-
   clockwise_rotation(rightMotor, 3000);
   halt_all_rotation(rightMotor, 1000);
   counterclockwise_rotation(rightMotor, 3000);
@@ -34,19 +33,19 @@ void setup() {
   halt_all_rotation(leftMotor, 1000);
 }
 
-void clockwise_rotation(Servo motor, int duration) {
+void clockwise_rotation(Servo motor, int duration){
   execute_motor_instruction(motor, CLOCKWISE_ROTATION, duration);
 }
 
-void counterclockwise_rotation(Servo motor, int duration) {
+void counterclockwise_rotation(Servo motor, int duration){
   execute_motor_instruction(motor, COUNTERCLOCKWISE_ROTATION, duration);
 }
 
-void halt_all_rotation(Servo motor, int duration) {
+void halt_all_rotation(Servo motor, int duration){
   execute_motor_instruction(motor, STOP_ALL_MOTION, duration);
 }
 
-void execute_motor_instruction(Servo motor, int instruction, int duration) {
+void execute_motor_instruction(Servo motor, int instruction, int duration){
   motor.writeMicroseconds(instruction);
   delay(duration);
 }
