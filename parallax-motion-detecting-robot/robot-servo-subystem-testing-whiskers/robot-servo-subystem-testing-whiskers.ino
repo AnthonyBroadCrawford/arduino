@@ -15,9 +15,11 @@ void setup() {
 
 void loop() {
 
+  //Read from the whiskers
   byte left = digitalRead(WHISKER_LEFT);
   byte right = digitalRead(WHISKER_RIGHT);
 
+  //Write whisker state to serial monitor
   Serial.print(left);
   Serial.print(right);
 
